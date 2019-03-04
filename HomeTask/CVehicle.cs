@@ -16,8 +16,8 @@ namespace HomeTask
             DataOfMan = dataOfMan;
         }
 
-        public static int Speed { get; set; }
-        public static int Price { get; set; }
-        public static int DataOfMan { get; set; }
+        public int Speed { get; set; }
+        public int Price { get; set; }
+        public int DataOfMan { get; set; }
     }
 }

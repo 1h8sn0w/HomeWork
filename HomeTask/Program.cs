@@ -24,7 +24,7 @@ namespace HomeTask
             masVehicles[2] = Boing;
             foreach (var item in masVehicles)
             {
-                if (CVehicle.Price > 100000)
+                if ()
                 {
                     Console.WriteLine("Прайс больше 100000");
                 }
