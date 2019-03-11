@@ -8,14 +8,14 @@ namespace HomeTask
 {
     class CShip : CVehicle
     {
-        public CShip(Gps gps, int ship, int port, int pass, int speed, int price, int dateOfMan) : base(speed, price, dateOfMan)
+        public CShip(Gps gps, string ship, int port, int pass, int speed, int price, int dateOfMan) : base(speed, price, dateOfMan)
         {
             Ship = ship;
             Pass = pass;
             Port = Port;
         }
 
-        public int Ship { get; set; }
+        public string Ship { get; set; }
         public int Pass { get; set; }
         public int Port { get; set; }
 
