@@ -13,21 +13,18 @@ namespace HomeTask
             Gps point1 = new Gps(50.1324, 51.12412);
             Gps point2 = new Gps(43.1212, 54.12412);
             CVehicle Audi = new CCar("Audi", point1, 210, 3000, 2004); //Car
-            CCar Bently = new CCar("Bently", point2, 450, 1000000, 2019); //Car
+            CCar Bently = new CCar("Bently", point2, 450, 1000000, 2019);
             CCar Renault = new CCar("Renault", point2, 250, 10000, 2015);
             CCar Shevrolet = new CCar("Shevrolet", point2, 180, 1500, 2003);
             CCar Opel = new CCar("Open", point2, 150, 2000, 2001);
-            //Console.WriteLine(Audi);
-            //Console.WriteLine(Bently);
             CPlane Boing = new CPlane(point1, "Boing", 10000, 400, 15000, 10000000, 2010); //Plane
             CPlane Mig = new CPlane(point1, "Mig", 4, 400, 15000, 10000000, 2009);
             CPlane Ill = new CPlane(point1, "Ill", 10000, 400, 15000, 10000000, 2005);
             CPlane Thunderbird = new CPlane(point1, "Thunderbird", 10000, 400, 15000, 10000000, 2001);
             CShip Cezar = new CShip(point2, "Cezar", 192168, 10000, 200, 2147483647, 2014); //Ship
-            CShip USA = new CShip(point2, "USA", 193528, 10000, 140, 2047483647, 209);
+            CShip USA = new CShip(point2, "USA", 193528, 10000, 140, 2047483647, 2019);
             CShip Crab = new CShip(point2, "Cab", 123448, 10000, 300, 2147483047, 2003);
             CShip Lotus = new CShip(point2, "Lotus", 876230, 10000, 100, 107483647, 2001);
-            //Console.WriteLine(Boing);
             CVehicle[] masVehicles = new CVehicle[13];
             masVehicles[0] = Audi;
             masVehicles[2] = Bently;
@@ -87,13 +84,43 @@ namespace HomeTask
                     case 3:
                         {
                             //Cars older then 5 years
-
+                            Array.Sort(masVehicles, new YearCompare());
+                            List<CVehicle> carList = new List<CVehicle>();
+                            foreach (var item in masVehicles)
+                            {
+                                if (5 < (2019 - item.DataOfMan))
+                                {
+                                    carList.Add(item);
+                                }
+                            }
+                            CVehicle[] carArr = carList.ToArray();
+                            foreach (var item in carList)
+                            {
+                                Console.Write(item + ", ");
+                                Console.WriteLine(item.DataOfMan);
+                            }
                             break;
                         }
                     case 4:
                         {
                             //Get Ships older then 5 years, expensive first
-
+                            Array.Sort(masVehicles, new YearCompare());
+                            List<CVehicle> shipList = new List<CVehicle>();
+                            foreach (var item in masVehicles)
+                            {
+                                if (5 < (2019 - item.DataOfMan))
+                                {
+                                    shipList.Add(item);
+                                }
+                            }
+                            CVehicle[] shipArr = shipList.ToArray();
+                            Array.Sort(shipArr, new PriceHighCompare());
+                            foreach (var item in shipArr)
+                            {
+                                Console.Write(item + ", ");
+                                Console.Write(item.DataOfMan+", ");
+                                Console.WriteLine(item.Price);
+                            }
                             break;
                         }
                     case 5:
