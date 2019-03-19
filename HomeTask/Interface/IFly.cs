@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace HomeTask
 {
-    class IFly
+    interface IFly
     {
+        void Fly();
     }
 }

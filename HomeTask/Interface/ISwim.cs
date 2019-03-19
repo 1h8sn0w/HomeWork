@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace HomeTask
 {
-    class ISwim
+    interface ISwim
     {
+        void Swim();
     }
 }
