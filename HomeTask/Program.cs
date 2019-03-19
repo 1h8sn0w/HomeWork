@@ -24,50 +24,63 @@ namespace HomeTask
             masVehicles[2] = Boing;
             masVehicles[1] = Bently;
             masVehicles[3] = Cezar;
-            Link1:
-            Console.WriteLine("Type what you want: 1-Year 2019, 2-price 100K+, 3-speed is less then 500km/h");
-            string input = Console.ReadLine();
-            int intinput = Convert.ToInt32(input);
-            if (intinput == 1)
+            int intinput = 0;
+            do
             {
-                foreach (var item in masVehicles)
+                Console.WriteLine("Type what you want: 1-Year 2019, 2-price 100K+, 3-speed is less then 500km/h, 4-Exit");
+                string input = Console.ReadLine();
+                intinput = Convert.ToInt32(input);
+                switch (intinput)
                 {
-                    if (item.DataOfMan == 2019)
-                    {
-                        Console.WriteLine(" ");
-                        Console.WriteLine(Convert.ToString(item) + " Year 2019");
-                        Console.WriteLine(item.DataOfMan);
-                    }
-                }
-                goto Link1;
-            }
-            if (intinput == 2)
-            {
-                foreach (var item in masVehicles)
-                {
-                    if (item.Price >= 100000)
-                    {
-                        Console.WriteLine(" ");
-                        Console.WriteLine(Convert.ToString(item) + " Prise is 100k+");
-                        Console.WriteLine(item.Price);
-                    }
-                }
-                goto Link1;
-            }
-            if (intinput == 3)
-            {
-                foreach (var item in masVehicles)
-                {
-                    if (item.Speed <= 500)
-                    {
-                        Console.WriteLine(" ");
-                        Console.WriteLine(Convert.ToString(item) + " Speed is <500");
-                        Console.WriteLine(item.Speed);
-                    }
-                }
-                goto Link1;
-            }
+                    case 1:
+                        {
+                            foreach (var item in masVehicles)
+                            {
+                                if (item.DataOfMan == 2019)
+                                {
+                                    Console.WriteLine(" ");
+                                    Console.WriteLine(Convert.ToString(item) + " Year 2019");
+                                    Console.WriteLine(item.DataOfMan);
+                                }
+                            }
+                            break;
+                        }
+                    case 2:
+                        {
+                            foreach (var item in masVehicles)
+                            {
+                                if (item.Price >= 100000)
+                                {
+                                    Console.WriteLine(" ");
+                                    Console.WriteLine(Convert.ToString(item) + " Prise is 100k+");
+                                    Console.WriteLine(item.Price);
+                                }
+                            }
+                            break;
+                        }
+                    case 3:
+                        {
+                            foreach (var item in masVehicles)
+                            {
+                                if (item.Speed <= 500)
+                                {
+                                    Console.WriteLine(" ");
+                                    Console.WriteLine(Convert.ToString(item) + " Speed is <500");
+                                    Console.WriteLine(item.Speed);
+                                }
+                            }
+                            break;
 
+                        }
+                    case 4:
+                        {
+                            Environment.Exit(1);
+                            break;
+                        }
+                    default:
+                        break;
+                }
+            } while (intinput != 4);  
         }
     }
 }

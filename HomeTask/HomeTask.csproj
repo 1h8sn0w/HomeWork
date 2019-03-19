@@ -43,13 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CCar.cs" />
-    <Compile Include="CPlane.cs" />
-    <Compile Include="CShip.cs" />
+    <Compile Include="Vehicles\CCar.cs" />
+    <Compile Include="Vehicles\CPlane.cs" />
+    <Compile Include="Vehicles\CShip.cs" />
     <Compile Include="CVehicle.cs" />
     <Compile Include="Gps.cs" />
+    <Compile Include="Interface\IFly.cs" />
+    <Compile Include="Interface\IMove.cs" />
+    <Compile Include="Interface\ISwim.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sort.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
