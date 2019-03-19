@@ -25,7 +25,9 @@ namespace HomeTask
             CShip USA = new CShip(point2, "USA", 193528, 10000, 140, 2047483647, 2019);
             CShip Crab = new CShip(point2, "Cab", 123448, 10000, 300, 2147483047, 2003);
             CShip Lotus = new CShip(point2, "Lotus", 876230, 10000, 100, 107483647, 2001);
-            CVehicle[] masVehicles = new CVehicle[13];
+            CVehicle Batmobile = new CBatmobile("pew pew", true);
+            CVehicle Amphibia = new CAmphibia(100, 1000000, 2019, "green");
+            CVehicle[] masVehicles = new CVehicle[15];
             masVehicles[0] = Audi;
             masVehicles[2] = Bently;
             masVehicles[1] = Renault;
@@ -39,6 +41,8 @@ namespace HomeTask
             masVehicles[10] = USA;
             masVehicles[11] = Crab;
             masVehicles[12] = Lotus;
+            masVehicles[13] = Batmobile;
+            masVehicles[14] = Amphibia;
 
             int intinput = 0;
             do
