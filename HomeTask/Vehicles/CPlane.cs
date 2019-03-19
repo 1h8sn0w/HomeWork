@@ -6,13 +6,17 @@ using System.Threading.Tasks;
 
 namespace HomeTask
 {
-    class CPlane : CVehicle
+    class CPlane : CVehicle, IFly
     {
         public CPlane(Gps gps, string plane, int pass, int hight, int speed, int price, int dataOfMan) : base(speed, price, dataOfMan)
         {
             Plane = plane;
             Pass = pass;
             Hight = hight;
+        }
+        public void Fly()
+        {
+            Console.WriteLine("I can Fly");
         }
 
         public string Plane { get; set; }

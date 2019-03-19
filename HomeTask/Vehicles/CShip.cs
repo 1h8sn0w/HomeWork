@@ -6,13 +6,17 @@ using System.Threading.Tasks;
 
 namespace HomeTask
 {
-    class CShip : CVehicle
+    class CShip : CVehicle, ISwim
     {
         public CShip(Gps gps, string ship, int port, int pass, int speed, int price, int dateOfMan) : base(speed, price, dateOfMan)
         {
             Ship = ship;
             Pass = pass;
             Port = Port;
+        }
+        public void Swim()
+        {
+            Console.WriteLine("I can swim");
         }
 
         public string Ship { get; set; }

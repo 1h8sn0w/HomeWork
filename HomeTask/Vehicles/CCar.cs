@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 
 namespace HomeTask
 {
-    class CCar : CVehicle
+    class CCar : CVehicle, IMove
     {
         public CCar(string car, Gps gps, int speed, int price, int dataOfMan) : base(speed, price, dataOfMan)
         {
             Car = car;
         }
+        public void Move ()
+            {
+            Console.WriteLine("I can Move");
+            }
 
         public string Car { get; set; }
 
