@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeTask", "HomeTask\HomeTask.csproj", "{AEDB4D0A-D0F4-4103-B2F6-7D6BFA01D292}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather Station", "Weather Station\Weather Station.csproj", "{ADA412DD-004F-4B78-BBC4-6EFF2D3B9266}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{AEDB4D0A-D0F4-4103-B2F6-7D6BFA01D292}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEDB4D0A-D0F4-4103-B2F6-7D6BFA01D292}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEDB4D0A-D0F4-4103-B2F6-7D6BFA01D292}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADA412DD-004F-4B78-BBC4-6EFF2D3B9266}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADA412DD-004F-4B78-BBC4-6EFF2D3B9266}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADA412DD-004F-4B78-BBC4-6EFF2D3B9266}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADA412DD-004F-4B78-BBC4-6EFF2D3B9266}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
