@@ -10,6 +10,11 @@ namespace Weather_Station
     {
         static void Main(string[] args)
         {
+            
+            ForecastController provider = new ForecastController();
+            Radio radio = new Radio();
+            Console.WriteLine(provider);
+            Console.WriteLine(radio);
         }
     }
 }
