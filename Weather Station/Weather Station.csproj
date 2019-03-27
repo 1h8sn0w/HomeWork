@@ -51,7 +51,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Forecast.cs" />
-    <Compile Include="ForecastController.cs" />
     <Compile Include="Observers\Mobile.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
