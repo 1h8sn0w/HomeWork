@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Weather_Station
 {
@@ -15,24 +12,26 @@ namespace Weather_Station
                 observers.Add(observer);
             return new Unsubscriber(observers, observer);
         }
-
+        public void UnSubscribe(IObserver<Forecast> observer)
+        {
+            observers.Remove(observer);
+        }
 
         class Unsubscriber : IDisposable
         {
-            private List<IObserver<Forecast>> observers;
-            private IObserver<Forecast> observer;
+            private List<IObserver<Forecast>> _observers;
+            private IObserver<Forecast> _observer;
 
             public Unsubscriber(List<IObserver<Forecast>> observers, IObserver<Forecast> observer)
             {
-                this.observers = observers;
-                this.observer = observer;
-                //observers.Remove(observer);
+                this._observers = observers;
+                this._observer = observer;
             }
 
             public void Dispose()
             {
-                if (observer != null && observers.Contains(observer))
-                    observers.Remove(observer);
+                if (_observer != null && _observers.Contains(_observer))
+                    _observers.Remove(_observer);
             }
         }
         public void TransmitForecast(Forecast value)

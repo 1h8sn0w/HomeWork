@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json.Linq;
-
-
-namespace Weather_Station
+﻿namespace Weather_Station
 {
     class Forecast 
     {
@@ -37,7 +29,7 @@ namespace Weather_Station
             }
 
         }
-        public String City { get;  set; }
+        public string City { get;  set; }
         public OpenWeatherAPI.OpenWeatherAPI Client { get; set; }
 
         public override string ToString()

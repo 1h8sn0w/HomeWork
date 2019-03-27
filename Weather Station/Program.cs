@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json.Linq;
 
 namespace Weather_Station
 {
@@ -24,6 +19,7 @@ namespace Weather_Station
                 {
                     default:
                         {
+                            Console.WriteLine();
                             Console.WriteLine("Enter city to get weather data for:");
                             string city = Console.ReadLine();
                             Console.WriteLine();
@@ -41,17 +37,17 @@ namespace Weather_Station
                             forecastKyiv.Subscribe(radio);                                          //new kyiv sub
                             forecastKyiv.Subscribe(tv);
                             forecastKyiv.Subscribe(mobile);
-                            forecastLviv.Subscribe(radio);                                          //new kyiv sub
+                            forecastLviv.Subscribe(radio);                                          //new lviv sub
                             forecastLviv.Subscribe(tv);
                             forecastLviv.Subscribe(mobile);
-
-                            //Action<Forecast> actionLviv = radio.OnNext;
-                            //actionLviv += tv.OnNext;
-                            //actionLviv += mobile.OnNext;
-                            forecastKyiv.TransmitForecast(forecast);
-                            forecastKyiv.Subscribe(radio);
+                            forecastKyiv.TransmitForecast(forecast);                                //cast for radio,tv,mobile
                             Console.WriteLine();
-                            forecastKyiv.TransmitForecast(forecast);
+                            forecastKyiv.UnSubscribe(radio);                                        //unsub from radio
+                            Console.WriteLine();
+                            forecastKyiv.TransmitForecast(forecast);                                //cast for tv,mobile
+
+                            
+
                         }
                         break;
                     case 0:
