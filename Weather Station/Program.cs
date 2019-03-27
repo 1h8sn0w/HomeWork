@@ -38,10 +38,6 @@ namespace Weather_Station
                             ForecastController forecastKyiv = new ForecastController();             //new Observer Controller 
                             ForecastController forecastLviv = new ForecastController();
 
-                            //Action<Forecast> actionLviv = radio.OnNext;
-                            //actionLviv += tv.OnNext;
-                            //actionLviv += mobile.OnNext;
-
                             forecastKyiv.Subscribe(radio);                                          //new kyiv sub
                             forecastKyiv.Subscribe(tv);
                             forecastKyiv.Subscribe(mobile);
@@ -49,8 +45,13 @@ namespace Weather_Station
                             forecastLviv.Subscribe(tv);
                             forecastLviv.Subscribe(mobile);
 
-                            radio.OnNext(forecast);
-                          
+                            //Action<Forecast> actionLviv = radio.OnNext;
+                            //actionLviv += tv.OnNext;
+                            //actionLviv += mobile.OnNext;
+                            forecastKyiv.TransmitForecast(forecast);
+                            forecastKyiv.Subscribe(radio);
+                            Console.WriteLine();
+                            forecastKyiv.TransmitForecast(forecast);
                         }
                         break;
                     case 0:

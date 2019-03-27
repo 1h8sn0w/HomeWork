@@ -11,6 +11,7 @@ namespace Weather_Station
         public void OnCompleted()
         {
             Console.WriteLine("Radio : transmittion ended");
+           // Unsubscriber.Dispose();
         }
 
         public void OnError(Exception error)
