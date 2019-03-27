@@ -8,26 +8,19 @@ namespace Weather_Station
 {
     class Radio : IObserver<Forecast>
     {
-        private IDisposable unsubsctriber;
-        private string text;
         public void OnCompleted()
         {
-            Console.WriteLine("Radio : ", text);
-            Unsunscriber();
+            Console.WriteLine("Radio : transmittion ended");            
         }
 
         public void OnError(Exception error)
-        {
-            Console.WriteLine("ERROR");
+        { 
+
         }
     
         public void OnNext(Forecast value)
         {
-            Console.WriteLine("Radio : ", value);
-        }
-        public void Unsunscriber()
-        {
-            unsubsctriber.Dispose();
+            Console.WriteLine("Radio :temp {0}, press {1}, humid {2} ", value.Temp, value.Press, value.Humid);
         }
     }
 

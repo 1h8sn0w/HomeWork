@@ -8,14 +8,7 @@ namespace Weather_Station
 {
     class ForecastController : IObservable<Forecast>
     {
-        private Forecast forecast;
-        private List<IObserver<Forecast>> observers;
-        public ForecastController()
-        {
-            observers = new List<IObserver<Forecast>>();
-        }
-
-
+        List<IObserver<Forecast>> observers = new List<IObserver<Forecast>>();
         public IDisposable Subscribe(IObserver<Forecast> observer)
         {
             if (!observers.Contains(observer))
