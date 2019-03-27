@@ -31,22 +31,18 @@ namespace Weather_Station
                             TV tv = new TV();                                                       //tv online
                             Mobile mobile = new Mobile();                                           //mobile online
 
-                            ForecastController forecastKyiv = new ForecastController();             //new Observer Controller 
-                            ForecastController forecastLviv = new ForecastController();
+                            radio.NewForecast += Show_event;                                        //Event call
 
-                            forecastKyiv.Subscribe(radio);                                          //new kyiv sub
-                            forecastKyiv.Subscribe(tv);
-                            forecastKyiv.Subscribe(mobile);
-                            forecastLviv.Subscribe(radio);                                          //new lviv sub
-                            forecastLviv.Subscribe(tv);
-                            forecastLviv.Subscribe(mobile);
-                            forecastKyiv.TransmitForecast(forecast);                                //cast for radio,tv,mobile
-                            Console.WriteLine();
-                            forecastKyiv.UnSubscribe(radio);                                        //unsub from radio
-                            Console.WriteLine();
-                            forecastKyiv.TransmitForecast(forecast);                                //cast for tv,mobile
+                            Console.WriteLine(new string('-', 50));
 
-                            
+                            Action<Forecast> actionForecast = tv.OnNext;
+                            actionForecast += radio.OnNext;
+                            actionForecast += mobile.OnNext;
+                            actionForecast(forecast);
+                            Console.WriteLine(new string('-', 50));
+                            actionForecast -= radio.OnNext;                                             //unsub forn radio
+                            actionForecast(forecast);
+
 
                         }
                         break;
@@ -58,6 +54,11 @@ namespace Weather_Station
                 }
 
             } while (start != 0);
+
+        }
+        public static void Show_event(string message)
+        {
+            Console.WriteLine(message);
         }
     }
 }

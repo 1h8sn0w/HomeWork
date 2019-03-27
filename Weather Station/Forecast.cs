@@ -2,6 +2,7 @@
 {
     class Forecast 
     {
+
         public double Temp 
         {
             get
