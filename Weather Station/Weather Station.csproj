@@ -50,14 +50,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FileStreamHandler.cs" />
     <Compile Include="Forecast.cs" />
-    <Compile Include="FromFileReader.cs" />
     <Compile Include="Observers\Mobile.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Observers\Radio.cs" />
     <Compile Include="Observers\TV.cs" />
-    <Compile Include="ToFileWriter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

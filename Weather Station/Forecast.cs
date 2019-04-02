@@ -1,4 +1,6 @@
-﻿namespace Weather_Station
+﻿using System;
+
+namespace Weather_Station
 {
     class Forecast 
     {
@@ -35,7 +37,7 @@
 
         public override string ToString()
         {
-            return$"Temp is {Temp}C, Humidity is {Humid}, Pressure is {Press}";
+            return$"time={DateTime.Now.ToString("HH:mm")}; day={DateTime.Now.ToString("dd:MM:yyyy")} t={Temp}; h={Humid}; p={Press};";
         }
     }
 }
