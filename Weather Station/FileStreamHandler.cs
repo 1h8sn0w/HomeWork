@@ -16,14 +16,36 @@ namespace Weather_Station
                 sw.WriteLine(forecast);
             }
         }
-        public static void Reader(string failname)
+        public static void Reader(string filename)
         {
-            using (StreamReader sr = new StreamReader(failname))
+            //using (StreamReader sr = new StreamReader(filename))
+            //{
+            //    string line;
+            //    while ((line = sr.ReadLine()) != null)
+            //    {
+            //        Console.WriteLine(line);
+            //    }
+
+            //}
+            using (StreamReader sr = new StreamReader(filename))
             {
-                string line;
-                while ((line = sr.ReadLine()) != null)
+                while (!sr.EndOfStream)
                 {
-                    Console.WriteLine(line);
+                    //int type = int.Parse(sr.ReadLine());
+                    string strparams = sr.ReadLine();
+                    string[] p = strparams.Split('=');
+                    if (p[0] == "t")
+                    {
+                        Console.WriteLine("t");
+                    }
+                    if (p[0] == "h")
+                    {
+                        Console.WriteLine("h");
+                    }
+                    if (p[0] == "p")
+                    {
+                        Console.WriteLine("p");
+                    }
                 }
             }
         }

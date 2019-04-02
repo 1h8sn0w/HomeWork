@@ -21,9 +21,7 @@ namespace Weather_Station
 
         private static void SetTimer()
         {
-            // Create a timer with a two second interval.
-            aTimer = new System.Timers.Timer(3600000);
-            // Hook up the Elapsed event for the timer. 
+            aTimer = new Timer(2000);
             aTimer.Elapsed += OnTimedEvent;
             aTimer.AutoReset = true;
             aTimer.Enabled = true;
@@ -32,10 +30,6 @@ namespace Weather_Station
         private static void OnTimedEvent(object source, ElapsedEventArgs e)
             {
                 var client = new OpenWeatherAPI.OpenWeatherAPI("51273fea55741d0e5dc348f04d52ff5a");
-                //Console.WriteLine("Press any NUMBER KEY or 0 to exit");
-                //var imp = Console.ReadLine();
-                //Console.WriteLine();
-                //start = Convert.ToInt32(imp);
 
                 Console.WriteLine();
                 Console.WriteLine("Enter city to get weather data for:");
@@ -50,8 +44,6 @@ namespace Weather_Station
                 TV tv = new TV();                                                       //tv online
                 Mobile mobile = new Mobile();                                           //mobile online
 
-                radio.NewForecast += Show_event;                                        //Event call
-
                 Console.WriteLine(new string('-', 50));
 
                 Action<Forecast> actionForecast = tv.OnNext;
@@ -65,12 +57,6 @@ namespace Weather_Station
 
                 FileStreamHandler.Writer(ref forecast, @"d:\forecast.txt");
                 FileStreamHandler.Reader(@"d:\forecast.txt");
-            }
-
-        private static void Show_event(string message)
-            {
-                Console.WriteLine(message);
-            }
-        
+            }       
     }
 }
