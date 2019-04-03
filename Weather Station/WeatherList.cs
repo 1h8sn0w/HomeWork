@@ -7,49 +7,57 @@ using System.Threading.Tasks;
 
 namespace Weather_Station
 {
-    class WeatherList : ICollection<Forecast>
+    class WeatherList
     {
-        List<string> temperarure = new List<string>();
-        List<string> humidity = new List<string>();
-        List<string> preassure = new List<string>();
-
-        public int Count => throw new NotImplementedException();
-
-        public bool IsReadOnly => throw new NotImplementedException();
-
-        public void Add(Forecast item)
+        string[] stack;
+        int head = -1;
+        public WeatherList(int size)
         {
-
+            stack = new string[size];
         }
-
-        public void Clear()
+        public void Push(string element)//добавление
         {
-            throw new NotImplementedException();
+            head++;
+            stack[head] = element;            
         }
-
-        public bool Contains(Forecast item)
+        public string Pop()//извлечение
         {
-            throw new NotImplementedException();
-        }
+            //if (!IsEmpty())
+            //{
 
-        public void CopyTo(Forecast[] array, int arrayIndex)
-        {
-            throw new NotImplementedException();
-        }
 
-        public IEnumerator<Forecast> GetEnumerator()
-        {
-            throw new NotImplementedException();
+            return (stack[head]);
+            //head--;
+            //}
+            //else 
         }
-
-        public bool Remove(Forecast item)
+        public int Size()//инициализация
         {
-            throw new NotImplementedException();
+            return stack.Length;
         }
-
-        IEnumerator IEnumerable.GetEnumerator()
+        public string List()//вывод
         {
-            throw new NotImplementedException();
+            head--;
+            return (stack[head]);
         }
-    }
+        public bool IsFull()
+        {
+            return head == stack.Length - 1;
+        }
+        public bool IsEmpty()
+        {
+            return head == -1;
+        }
+        public void Print()
+        {
+            Console.WriteLine("*************************");
+            foreach (var item in stack)
+            {
+                Console.Write(item + ", ");
+            }
+            Console.WriteLine();
+            Console.WriteLine("*************************");
+        }
+    } 
 }
+

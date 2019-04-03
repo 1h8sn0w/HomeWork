@@ -23,40 +23,49 @@ namespace Weather_Station
         {
             aTimer = new Timer(2000);
             aTimer.Elapsed += OnTimedEvent;
-            aTimer.AutoReset = true;
+            aTimer.AutoReset = false;
             aTimer.Enabled = true;
         }
 
         private static void OnTimedEvent(object source, ElapsedEventArgs e)
+        {
+            var client = new OpenWeatherAPI.OpenWeatherAPI("51273fea55741d0e5dc348f04d52ff5a");
+
+            Console.WriteLine();
+            Console.WriteLine("Enter city to get weather data for:");
+            //string city = Console.ReadLine();
+            string city = "Kyiv";
+            Console.WriteLine(city);
+            Console.WriteLine();
+            var results = client.Query(city);
+            Forecast forecast = new Forecast { City = city, Client = client };      //creating forecast
+
+            Radio radio = new Radio();                                              //radio online
+            TV tv = new TV();                                                       //tv online
+            Mobile mobile = new Mobile();                                           //mobile online
+
+            Console.WriteLine(new string('-', 50));
+
+            Action<Forecast> actionForecast = tv.OnNext;
+            actionForecast += radio.OnNext;
+            actionForecast += mobile.OnNext;
+            actionForecast(forecast);
+            Console.WriteLine(new string('-', 50));
+            actionForecast -= radio.OnNext;                                             //unsub forn radio
+            actionForecast(forecast);
+            Console.WriteLine(new string('-', 50));
+            //WeatherList forecastlist = new WeatherList();
+            //FileStreamHandler.Writer(ref forecast, @"d:\forecast_test.txt");
+            FileStreamHandler.Reader(@"d:\forecast_test.csv");
+            Console.WriteLine(new string('-', 50));
+            WeatherList wl = new WeatherList(50);
+            foreach (var item in FileStreamHandler.forecast)
             {
-                var client = new OpenWeatherAPI.OpenWeatherAPI("51273fea55741d0e5dc348f04d52ff5a");
-
-                Console.WriteLine();
-                Console.WriteLine("Enter city to get weather data for:");
-                //string city = Console.ReadLine();
-                string city = "Kyiv";
-                Console.WriteLine(city);
-                Console.WriteLine();
-                var results = client.Query(city);
-                Forecast forecast = new Forecast { City = city, Client = client };      //creating forecast
-
-                Radio radio = new Radio();                                              //radio online
-                TV tv = new TV();                                                       //tv online
-                Mobile mobile = new Mobile();                                           //mobile online
-
-                Console.WriteLine(new string('-', 50));
-
-                Action<Forecast> actionForecast = tv.OnNext;
-                actionForecast += radio.OnNext;
-                actionForecast += mobile.OnNext;
-                actionForecast(forecast);
-                Console.WriteLine(new string('-', 50));
-                actionForecast -= radio.OnNext;                                             //unsub forn radio
-                actionForecast(forecast);
-                Console.WriteLine(new string('-', 50));
-
-                FileStreamHandler.Writer(ref forecast, @"d:\forecast.txt");
-                FileStreamHandler.Reader(@"d:\forecast.txt");
-            }       
+                Console.WriteLine(item);
+                wl.Push(item);
+            }
+            wl.Print();
+            
+        }
     }
 }

@@ -9,6 +9,7 @@ namespace Weather_Station
 {
     class FileStreamHandler
     {
+        public static List<string> forecast = new List<string>();
         public static void Writer(ref Forecast forecast, string filename)
         {
             using (StreamWriter sw = new StreamWriter(filename, true))
@@ -18,36 +19,27 @@ namespace Weather_Station
         }
         public static void Reader(string filename)
         {
-            //using (StreamReader sr = new StreamReader(filename))
-            //{
-            //    string line;
-            //    while ((line = sr.ReadLine()) != null)
-            //    {
-            //        Console.WriteLine(line);
-            //    }
-
-            //}
-            using (StreamReader sr = new StreamReader(filename))
+            using (var reader = new StreamReader(filename))
             {
-                while (!sr.EndOfStream)
+                List<string> time = new List<string>();
+                List<string> day = new List<string>();
+                List<string> temp = new List<string>();
+                List<string> humid = new List<string>();
+                List<string> preas = new List<string>();
+                while (!reader.EndOfStream)
                 {
-                    //int type = int.Parse(sr.ReadLine());
-                    string strparams = sr.ReadLine();
-                    string[] p = strparams.Split('=');
-                    if (p[0] == "t")
-                    {
-                        Console.WriteLine("t");
-                    }
-                    if (p[0] == "h")
-                    {
-                        Console.WriteLine("h");
-                    }
-                    if (p[0] == "p")
-                    {
-                        Console.WriteLine("p");
-                    }
+                    var line = reader.ReadLine();
+                    var values = line.Split(';');    
+                    
+                    time.Add(values[0].Replace("time=", "").Trim());
+                    day.Add(values[1].Replace("day=", "").Trim());
+                    temp.Add(values[2].Replace("t=", "").Trim());
+                    humid.Add(values[3].Replace("h=", "").Trim());
+                    preas.Add(values[4].Replace("p=", "").Trim());
                 }
+                forecast = time.Concat(day).Concat(temp).Concat(humid).Concat(preas).ToList();
             }
+            
         }
     }
 }

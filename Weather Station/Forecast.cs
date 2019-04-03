@@ -37,7 +37,7 @@ namespace Weather_Station
 
         public override string ToString()
         {
-            return$"time={DateTime.Now.ToString("HH:mm")}; day={DateTime.Now.ToString("dd:MM:yyyy")} t={Temp}; h={Humid}; p={Press};";
+            return$"time={DateTime.Now.ToString("HH:mm")}; day={DateTime.Now.ToString("dd:MM:yyyy")}; t={Temp}; h={Humid}; p={Press};";
         }
     }
 }
