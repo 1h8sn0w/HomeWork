@@ -11,15 +11,20 @@ namespace Weather_Station
     {
         string[] stack;
         int head = -1;
+        public WeatherList()
+        {
+            stack = new string[10];
+        }
         public WeatherList(int size)
         {
             stack = new string[size];
         }
         public void Push(string element)//добавление
         {
-            head++;
-            stack[head] = element;            
+                head++;
+                stack[head] = element;
         }
+        public string Peek() { return stack[head]; }
         public string Pop()//извлечение
         {
             //if (!IsEmpty())
@@ -58,6 +63,6 @@ namespace Weather_Station
             Console.WriteLine();
             Console.WriteLine("*************************");
         }
-    } 
+    }
 }
 

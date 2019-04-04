@@ -29,15 +29,15 @@ namespace Weather_Station
                 while (!reader.EndOfStream)
                 {
                     var line = reader.ReadLine();
-                    var values = line.Split(';');    
-                    
-                    time.Add(values[0].Replace("time=", "").Trim());
-                    day.Add(values[1].Replace("day=", "").Trim());
-                    temp.Add(values[2].Replace("t=", "").Trim());
-                    humid.Add(values[3].Replace("h=", "").Trim());
-                    preas.Add(values[4].Replace("p=", "").Trim());
+                    var values = line.Split(';');
+
+                    time.Add(values[0]);//.Replace("time=", "").Trim());
+                    day.Add(values[1]);//.Replace("day=", "").Trim());
+                    temp.Add(values[2]);//.Replace("t=", "").Trim());
+                    humid.Add(values[3]);//.Replace("h=", "").Trim());
+                    preas.Add(values[4]);//.Replace("p=", "").Trim());
                 }
-                forecast = time.Concat(day).Concat(temp).Concat(humid).Concat(preas).ToList();
+            forecast = time.Concat(day).Concat(temp).Concat(humid).Concat(preas).ToList();
             }
             
         }

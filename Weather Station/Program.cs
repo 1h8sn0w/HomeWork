@@ -26,7 +26,6 @@ namespace Weather_Station
             aTimer.AutoReset = false;
             aTimer.Enabled = true;
         }
-
         private static void OnTimedEvent(object source, ElapsedEventArgs e)
         {
             var client = new OpenWeatherAPI.OpenWeatherAPI("51273fea55741d0e5dc348f04d52ff5a");
@@ -61,11 +60,21 @@ namespace Weather_Station
             WeatherList wl = new WeatherList(50);
             foreach (var item in FileStreamHandler.forecast)
             {
-                Console.WriteLine(item);
                 wl.Push(item);
             }
             wl.Print();
-            
+            //WeatherList temp = new WeatherList(50);
+            //WeatherList humid = new WeatherList(50);
+            //while (!wl.IsEmpty())
+            //{
+            //    if (wl.Peek().Equals("t"))
+            //    {
+            //        temp.Push(wl.Pop());
+            //    }
+            //    else humid.Push(wl.Pop());
+            //}
+            Console.WriteLine(new string('-', 50));
+            //temp.Print();
         }
     }
 }
