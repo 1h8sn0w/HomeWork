@@ -63,18 +63,18 @@ namespace Weather_Station
                 wl.Push(item);
             }
             wl.Print();
-            //WeatherList temp = new WeatherList(50);
-            //WeatherList humid = new WeatherList(50);
-            //while (!wl.IsEmpty())
-            //{
-            //    if (wl.Peek().Equals("t"))
-            //    {
-            //        temp.Push(wl.Pop());
-            //    }
-            //    else humid.Push(wl.Pop());
-            //}
+            WeatherList temp = new WeatherList(50);
+            WeatherList humid = new WeatherList(50);
+            while (!wl.IsEmpty())
+            {
+                if (wl.Peek().Equals("t"))
+                {
+                    Console.WriteLine("+");
+                }
+                else humid.Push(wl.Pop());
+            }
             Console.WriteLine(new string('-', 50));
-            //temp.Print();
+            temp.Print();
         }
     }
 }

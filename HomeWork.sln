@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeTask", "HomeTask\HomeTa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather Station", "Weather Station\Weather Station.csproj", "{ADA412DD-004F-4B78-BBC4-6EFF2D3B9266}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoPark", "AutoPark\AutoPark.csproj", "{8F2C48E5-B286-4BF5-B97E-6DE45E58695B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{ADA412DD-004F-4B78-BBC4-6EFF2D3B9266}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADA412DD-004F-4B78-BBC4-6EFF2D3B9266}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADA412DD-004F-4B78-BBC4-6EFF2D3B9266}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F2C48E5-B286-4BF5-B97E-6DE45E58695B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F2C48E5-B286-4BF5-B97E-6DE45E58695B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F2C48E5-B286-4BF5-B97E-6DE45E58695B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F2C48E5-B286-4BF5-B97E-6DE45E58695B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
