@@ -44,7 +44,6 @@ namespace Vocabulary
             vocab.AddNode(new Word("Looser", "Лузер"));
             vocab.AddNode(new Word("English", "Английский"));
 
-            
 
             Node result = vocab.FindNode(new Word(textBox1.Text, null));
 

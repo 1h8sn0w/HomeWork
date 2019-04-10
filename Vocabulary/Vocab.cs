@@ -63,29 +63,40 @@ namespace Vocabulary
             {
                 if (String.Compare(currentroot.Data.Eng, node.Data.Eng) > 0)
                 {
-                    if (String.Compare(currentroot.Left.Data.Eng, node.Data.Eng, true) == 0)
+                    if (currentroot.Left != null)
                     {
-                        resulting = currentroot.Left;
 
+
+                        if (String.Compare(currentroot.Left.Data.Eng, node.Data.Eng, true) == 0)
+                        {
+                            resulting = currentroot.Left;
+
+                        }
+                        else if (String.Compare(currentroot.Left.Data.Eng, node.Data.Eng, true) != 0)
+                        {
+                            WordFind(currentroot.Left, node);
+                        }
                     }
-                    else if (String.Compare(currentroot.Left.Data.Eng, node.Data.Eng, true) != 0)
-                    {
-                        WordFind(currentroot.Left, node);
-                    }
+                    else resulting = new Node(new Word("Думал я глупый? Не то слово. Пидор.", "Думал я глупый? Не то слово. Пидор."));
 
                 }
                 else if (String.Compare(currentroot.Data.Eng, node.Data.Eng) < 0)
                 {
-                    if (String.Compare(currentroot.Right.Data.Eng, node.Data.Eng, true) == 0)
+                    if (currentroot.Right != null)
                     {
-                        resulting = currentroot.Right;
+                        if (String.Compare(currentroot.Right.Data.Eng, node.Data.Eng, true) == 0)
+                        {
+                            resulting = currentroot.Right;
+                        }
+                        else if (String.Compare(currentroot.Right.Data.Eng, node.Data.Eng, true) != 0)
+                        {
+                            WordFind(currentroot.Right, node);
+                        }
                     }
-                    else if (String.Compare(currentroot.Right.Data.Eng, node.Data.Eng, true) != 0)
-                    {
-                        WordFind(currentroot.Right, node);
-                    }
-                }
+                    else resulting = new Node(new Word("Думал я глупый? Не то слово. Пидор.", "Думал я глупый? Не то слово. Пидор."));
+                }                
             }
+            
         }
     }
 }
