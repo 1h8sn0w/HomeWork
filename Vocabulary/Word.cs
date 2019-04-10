@@ -13,7 +13,14 @@ namespace Vocabulary
             Eng = eng;
             Rus = rus;
         }
+
+        public override string ToString()
+        {
+            return $"{Eng}, {Rus}";
+        }
+
         public string Eng { get; set; }
         public string Rus { get; set; }
+
     }
 }

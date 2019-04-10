@@ -8,13 +8,19 @@ namespace Vocabulary
 {
     public class Node
     {
-        public Node(Node left, Node right)
+        public Node(Word data)
         {
-            Left = left;
-            Right = right;
+            Data = data;
+            Left = null;
+            Right = null;
         }
-
+        public Word Data { get; set; }
         public Node Left { get; set; }
         public Node Right { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Data}, {Left},{Right}";
+        }
     }
 }

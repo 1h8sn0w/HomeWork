@@ -18,8 +18,8 @@ namespace Vocabulary
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
 
-            Vocab vocab = new Vocab();
-            vocab.AddNode(new Word("Test", "Тест");
+
+
         }
     }
 }
