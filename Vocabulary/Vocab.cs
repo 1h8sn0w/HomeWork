@@ -55,7 +55,7 @@ namespace Vocabulary
         }
         private void WordFind(Node currentroot, Node node)
         {
-            if (currentroot.Data.Eng == node.Data.Eng)
+            if (String.Compare(currentroot.Data.Eng, node.Data.Eng, true) == 0)
             {
                 resulting = currentroot;
             }
