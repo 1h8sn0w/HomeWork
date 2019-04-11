@@ -17,9 +17,6 @@ namespace AutoPark
             park.AddNode(new Vehicle(4, "Dasya", 124));
             park.AddNode(new Vehicle(5, "Gasya", 680));
             park.AddNode(new Vehicle(6, "Zasya", 346));
-            
-
-
             Console.ReadKey();
         }
     }
