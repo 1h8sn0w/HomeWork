@@ -9,46 +9,47 @@ namespace AutoPark
 
     class Tree
     {
-        public Node node;
-        public static Node root;
+        private Node _node;
+        private static Node _root;
 
         public void AddNode(Vehicle input)
         {
-            node = new Node(input, null, null);
-            Node currentroot = root;
+            _node = new Node(input, null, null);
+            Node currentRoot = _root;
 
-            if (root == null)
+            if (_root == null)
             {
-                root = node;
+                _root = _node;
             }
             else
             {
-                Find(currentroot, node);
+                Find(currentRoot, _node);
             }
 
         }
-        public void Find(Node currentroot, Node node)
+
+        private static void Find(Node currentRoot, Node node)
         {
-            if (currentroot.GetHashCode() > node.GetHashCode())
+            if (currentRoot.GetHashCode() > node.GetHashCode())
             {
-                if (currentroot.left == null)
+                if (currentRoot.left == null)
                 {
-                    currentroot.left = node;
+                    currentRoot.left = node;
                 }
-                else Find(currentroot.left, node);
+                else Find(currentRoot.left, node);
             }
-            else if (currentroot.GetHashCode() < node.GetHashCode())
+            else if (currentRoot.GetHashCode() < node.GetHashCode())
             {
-                if (currentroot.right == null)
+                if (currentRoot.right == null)
                 {
-                    currentroot.right = node;
+                    currentRoot.right = node;
                 }
-                else Find(currentroot.right, node);
+                else Find(currentRoot.right, node);
             }
         }
-        public void Print(Tree node)
+        public void Print()
         {
-            Console.WriteLine("d {0},l {1},r {2}", root.data, root.left, root.right);
+            Console.WriteLine("d {0},l {1},r {2}", _root.data, _root.left, _root.right);
         }
 
 

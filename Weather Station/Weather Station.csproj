@@ -68,10 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\Newtonsoft.Json.dll" />
-    <Content Include="bin\Debug\Newtonsoft.Json.pdb" />
-    <Content Include="bin\Debug\Newtonsoft.Json.xml" />
     <Content Include="bin\Debug\OpenWeatherAPI.dll" />
-    <Content Include="bin\Debug\OpenWeatherAPI.pdb" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

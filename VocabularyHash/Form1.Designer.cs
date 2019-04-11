@@ -1,4 +1,4 @@
-﻿namespace Vocabulary
+﻿namespace VocabularyHash
 {
     partial class Form1
     {

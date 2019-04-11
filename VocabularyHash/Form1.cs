@@ -1,17 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Vocabulary
+namespace VocabularyHash
 {
-
     public partial class Form1 : Form
     {
         public string userinput;
@@ -28,9 +21,9 @@ namespace Vocabulary
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Stopwatch watch = Stopwatch.StartNew();
+            var watch = Stopwatch.StartNew();
 
-            Dictionary<string, string> vocab = new Dictionary<string, string>();
+            var vocab = new Dictionary<string, string>();
             vocab.Add("World", "Мир");
             vocab.Add("Dog", "Пёс");
             vocab.Add("Cat", "Киска");
@@ -46,10 +39,8 @@ namespace Vocabulary
 
             watch.Stop();
 
-            label3.Text = "сек на поиск " + (watch.Elapsed.TotalMilliseconds).ToString();
-            label1.Text = vocab.TryGetValue(textBox1.Text.Trim(), out string result) ? result : "А Ш Ы Б К А ! ! !";
-
+            label3.Text = "сек на поиск " + watch.Elapsed.TotalMilliseconds;
+            label1.Text = vocab.TryGetValue(textBox1.Text.Trim(), out var result) ? result : "А Ш Ы Б К А ! ! !";
         }
-
     }
 }
