@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Windows.Forms;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace VocabularyHash
 {
@@ -49,13 +51,34 @@ namespace VocabularyHash
             foreach (var variable in vocab2)
             {
                 label3.Text = label3.Text + variable.Key.ToString() + " ";
-                label3.Text = label3.Text + variable.Value.ToString() + "\n"; 
+                label3.Text = label3.Text + variable.Value.ToString() + "\n";
             }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             var file = new SaveToFile(vocab);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            string conStr = ConfigurationManager.ConnectionStrings["VocabCon"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(conStr))
+            {
+                connection.Open();
+                StatusLabel1.Text = @"Connection to BD is " + connection.State;
+                string sqlSelect = $"SELECT * FROM Dictionary";
+                SqlCommand command = new SqlCommand(sqlSelect, connection);
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    if (textBox1.Text.Trim() == reader.GetValue(1))
+                    {
+                        label1.Text = reader.GetValue(3).ToString();
+                    }
+                }
+            }
         }
     }
 }
