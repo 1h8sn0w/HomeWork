@@ -26,9 +26,14 @@ namespace VocabularyHash
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var file = new FileWorker(vocab);
+            //var file = new FileWorker(vocab);
 
-            label1.Text = vocab.TryGetValue(textBox1.Text.Trim(), out var result) ? result : "А Ш Ы Б К А ! ! !";
+            //label1.Text = vocab.TryGetValue(textBox1.Text.Trim(), out var result) ? result : "А Ш Ы Б К А ! ! !";
+
+            if (vocab.TryGetValue(textBox1.Text.Trim(), out var result))
+                label1.Text = result + " from DB";
+            else
+                label1.Text = "А Ш Ы Б К А ! ! ! ";
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -66,6 +71,7 @@ namespace VocabularyHash
 
             using (SqlConnection connection = new SqlConnection(conStr))
             {
+                var watch = Stopwatch.StartNew();
                 connection.Open();
                 StatusLabel1.Text = @"Connection to BD is " + connection.State;
                 string sqlSelect = $"SELECT * FROM Dictionary";
@@ -73,12 +79,23 @@ namespace VocabularyHash
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.HasRows)
                 {
-                    if (textBox1.Text.Trim() == reader.GetValue(1))
+                    while (reader.Read())
                     {
-                        label1.Text = reader.GetValue(3).ToString();
+                        var key = reader[1];
+                        var value = reader[2];
+                        vocab.Add(key.ToString().Trim(), value.ToString().Trim());
                     }
                 }
+                connection.Close();
+                watch.Stop();
+                StatusLabel1.Text = @"Connection to BD is " + connection.State;
+                StatusLabel1.Text += @", подключение длилось " + watch.Elapsed.TotalSeconds + @" сек";
             }
+        }
+
+        private void button6_MouseUp(object sender, MouseEventArgs e)
+        {
+            button6.Enabled = false;
         }
     }
 }

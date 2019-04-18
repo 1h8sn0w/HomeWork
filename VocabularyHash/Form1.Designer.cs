@@ -86,6 +86,7 @@
             // 
             // button2
             // 
+            this.button2.Enabled = false;
             this.button2.Location = new System.Drawing.Point(624, 103);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(107, 23);
@@ -96,6 +97,7 @@
             // 
             // button3
             // 
+            this.button3.Enabled = false;
             this.button3.Location = new System.Drawing.Point(624, 133);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(107, 23);
@@ -141,6 +143,7 @@
             this.button6.Text = "Get Dict from BD";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button6.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button6_MouseUp);
             // 
             // statusStrip1
             // 
@@ -156,8 +159,8 @@
             // 
             this.StatusLabel1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.StatusLabel1.Name = "StatusLabel1";
-            this.StatusLabel1.Size = new System.Drawing.Size(90, 17);
-            this.StatusLabel1.Text = "Connection to BD";
+            this.StatusLabel1.Size = new System.Drawing.Size(118, 17);
+            this.StatusLabel1.Text = "Connection to BD state";
             // 
             // Form1
             // 
