@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocabularyHash", "Vocabular
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather Station sql", "Weather Station sql\Weather Station sql.csproj", "{C27F820D-4EF1-41E4-AB62-2900B23976AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dispatcher", "Dispatcher\Dispatcher.csproj", "{38C3FD18-0557-4F79-83AC-9D50FD5F000E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{C27F820D-4EF1-41E4-AB62-2900B23976AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C27F820D-4EF1-41E4-AB62-2900B23976AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C27F820D-4EF1-41E4-AB62-2900B23976AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38C3FD18-0557-4F79-83AC-9D50FD5F000E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38C3FD18-0557-4F79-83AC-9D50FD5F000E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38C3FD18-0557-4F79-83AC-9D50FD5F000E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38C3FD18-0557-4F79-83AC-9D50FD5F000E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
