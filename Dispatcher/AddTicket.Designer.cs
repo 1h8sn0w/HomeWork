@@ -50,18 +50,18 @@
             this.dispatcherDataSet4 = new Dispatcher.DispatcherDataSet();
             this.routeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.routeTableAdapter4 = new Dispatcher.DispatcherDataSetTableAdapters.RouteTableAdapter();
-            this.routeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fKVoyageRouteN4F7CD00DBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.voyageTableAdapter2 = new Dispatcher.DispatcherDataSetTableAdapters.VoyageTableAdapter();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.routeDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dispatcherDataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.routeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.routeBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKVoyageRouteN4F7CD00DBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -235,13 +235,12 @@
             this.routeDataGridView.AutoGenerateColumns = false;
             this.routeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.routeDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn17,
             this.dataGridViewTextBoxColumn18,
             this.dataGridViewTextBoxColumn19,
             this.dataGridViewTextBoxColumn20,
             this.dataGridViewTextBoxColumn21,
             this.dataGridViewTextBoxColumn22});
-            this.routeDataGridView.DataSource = this.routeBindingSource1;
+            this.routeDataGridView.DataSource = this.routeBindingSource;
             this.routeDataGridView.Location = new System.Drawing.Point(268, 21);
             this.routeDataGridView.Name = "routeDataGridView";
             this.routeDataGridView.ReadOnly = true;
@@ -262,18 +261,6 @@
             // routeTableAdapter4
             // 
             this.routeTableAdapter4.ClearBeforeFill = true;
-            // 
-            // routeBindingSource1
-            // 
-            this.routeBindingSource1.DataMember = "Route";
-            this.routeBindingSource1.DataSource = this.dispatcherDataSet4;
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn17.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn18
             // 
@@ -310,6 +297,15 @@
             this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
             this.dataGridViewTextBoxColumn22.ReadOnly = true;
             // 
+            // fKVoyageRouteN4F7CD00DBindingSource
+            // 
+            this.fKVoyageRouteN4F7CD00DBindingSource.DataMember = "FK__Voyage__RouteN__4F7CD00D";
+            this.fKVoyageRouteN4F7CD00DBindingSource.DataSource = this.routeBindingSource;
+            // 
+            // voyageTableAdapter2
+            // 
+            this.voyageTableAdapter2.ClearBeforeFill = true;
+            // 
             // AddTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -327,7 +323,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.routeDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dispatcherDataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.routeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.routeBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKVoyageRouteN4F7CD00DBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -388,12 +384,12 @@
         private DispatcherDataSet dispatcherDataSet4;
         private System.Windows.Forms.BindingSource routeBindingSource;
         private DispatcherDataSetTableAdapters.RouteTableAdapter routeTableAdapter4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
-        private System.Windows.Forms.BindingSource routeBindingSource1;
+        private System.Windows.Forms.BindingSource fKVoyageRouteN4F7CD00DBindingSource;
+        private DispatcherDataSetTableAdapters.VoyageTableAdapter voyageTableAdapter2;
     }
 }

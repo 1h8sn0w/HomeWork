@@ -33,10 +33,10 @@ namespace Dispatcher
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "dispatcherDataSet1.Dispatcher". При необходимости она может быть перемещена или удалена.
-            this.dispatcherTableAdapter1.Fill(this.dispatcherDataSet1.Dispatcher);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dispatcherDataSet1.Ticket". При необходимости она может быть перемещена или удалена.
             this.ticketTableAdapter1.Fill(this.dispatcherDataSet1.Ticket);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dispatcherDataSet1.Dispatcher". При необходимости она может быть перемещена или удалена.
+            this.dispatcherTableAdapter1.Fill(this.dispatcherDataSet1.Dispatcher);
 
         }
     }

@@ -39,6 +39,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dispatcherDataSet1 = new Dispatcher.DispatcherDataSet();
+            this.dispatcherBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dispatcherTableAdapter1 = new Dispatcher.DispatcherDataSetTableAdapters.DispatcherTableAdapter();
             this.ticketBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ticketTableAdapter1 = new Dispatcher.DispatcherDataSetTableAdapters.TicketTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,14 +50,12 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dispatcherBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dispatcherTableAdapter1 = new Dispatcher.DispatcherDataSetTableAdapters.DispatcherTableAdapter();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dispatcherDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ticketBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dispatcherBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -155,6 +155,15 @@
             this.dispatcherDataSet1.DataSetName = "DispatcherDataSet";
             this.dispatcherDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // dispatcherBindingSource
+            // 
+            this.dispatcherBindingSource.DataMember = "Dispatcher";
+            this.dispatcherBindingSource.DataSource = this.dispatcherDataSet1;
+            // 
+            // dispatcherTableAdapter1
+            // 
+            this.dispatcherTableAdapter1.ClearBeforeFill = true;
+            // 
             // ticketBindingSource
             // 
             this.ticketBindingSource.DataMember = "Ticket";
@@ -213,15 +222,6 @@
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
-            // dispatcherBindingSource
-            // 
-            this.dispatcherBindingSource.DataMember = "Dispatcher";
-            this.dispatcherBindingSource.DataSource = this.dispatcherDataSet1;
-            // 
-            // dispatcherTableAdapter1
-            // 
-            this.dispatcherTableAdapter1.ClearBeforeFill = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -244,8 +244,8 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dispatcherDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ticketBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dispatcherBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,6 +272,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn voyageIdDataGridViewTextBoxColumn;
         private DispatcherDataSetTableAdapters.DispatcherTableAdapter dispatcherTableAdapter;
         private DispatcherDataSet dispatcherDataSet1;
+        private System.Windows.Forms.BindingSource dispatcherBindingSource;
+        private DispatcherDataSetTableAdapters.DispatcherTableAdapter dispatcherTableAdapter1;
         private System.Windows.Forms.BindingSource ticketBindingSource;
         private DispatcherDataSetTableAdapters.TicketTableAdapter ticketTableAdapter1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
@@ -281,8 +283,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.BindingSource dispatcherBindingSource;
-        private DispatcherDataSetTableAdapters.DispatcherTableAdapter dispatcherTableAdapter1;
     }
 }
 

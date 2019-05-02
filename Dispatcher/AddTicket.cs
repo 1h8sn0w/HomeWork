@@ -19,6 +19,8 @@ namespace Dispatcher
 
         private void AddTicket_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dispatcherDataSet4.Voyage". При необходимости она может быть перемещена или удалена.
+            this.voyageTableAdapter2.Fill(this.dispatcherDataSet4.Voyage);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dispatcherDataSet4.Route". При необходимости она может быть перемещена или удалена.
             this.routeTableAdapter4.Fill(this.dispatcherDataSet4.Route);
             textBox2.Text = DateTime.Now.ToString();
