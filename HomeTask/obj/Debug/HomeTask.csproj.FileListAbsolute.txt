@@ -5,3 +5,10 @@ C:\Users\Prog.GL752VW\source\repos\HomeWork\HomeTask\bin\Debug\HomeTask.exe
 C:\Users\Prog.GL752VW\source\repos\HomeWork\HomeTask\bin\Debug\HomeTask.pdb
 C:\Users\Prog.GL752VW\source\repos\HomeWork\HomeTask\obj\Debug\HomeTask.exe
 C:\Users\Prog.GL752VW\source\repos\HomeWork\HomeTask\obj\Debug\HomeTask.pdb
+C:\Users\cityn\source\repos\1h8sn0w\HomeWork\HomeTask\bin\Debug\HomeTask.exe.config
+C:\Users\cityn\source\repos\1h8sn0w\HomeWork\HomeTask\bin\Debug\HomeTask.exe
+C:\Users\cityn\source\repos\1h8sn0w\HomeWork\HomeTask\bin\Debug\HomeTask.pdb
+C:\Users\cityn\source\repos\1h8sn0w\HomeWork\HomeTask\obj\Debug\HomeTask.csprojAssemblyReference.cache
+C:\Users\cityn\source\repos\1h8sn0w\HomeWork\HomeTask\obj\Debug\HomeTask.csproj.CoreCompileInputs.cache
+C:\Users\cityn\source\repos\1h8sn0w\HomeWork\HomeTask\obj\Debug\HomeTask.exe
+C:\Users\cityn\source\repos\1h8sn0w\HomeWork\HomeTask\obj\Debug\HomeTask.pdb
